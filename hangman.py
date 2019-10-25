@@ -1,10 +1,37 @@
 import turtle
 import time
-import os
-import random
-misses = []
-misses = 0
+
+wordlist= "ponyo"
+GuessList = []
+wordlist = list("ponyo")
+count = 0
+GuessList = list("_____")
+wordlist = list(wordlist)
+GuessList = []
+print(GuessList)
+GuessList[0] = "p"
+print(GuessList)
+GuessList[1] = "o"
+print(GuessList)
+GuessList[2] = "n"
+print(GuessList)
+GuessList[3] = "y"
+print(GuessList)
+GuessList[4] = "o"
+print(GuessList)
+for l in guess:
+  if l == letter:
+    print(count)
+    count += 1
+print(GuessList)
+  
 hangmanList = [''' 
+ 
+     +---+
+     0   |
+         |
+         |
+         === ''', ''' 
  
      +---+
      0   |
@@ -36,61 +63,27 @@ hangmanList = ['''
      /|\  |
      / \  |
          === ''' ]
-         
 misses = 0
-
+guess = input("Guess a letter: ")
+guess = (wordlist[0])
+wordlist = list(guess)
+index = 0
+for letter in wordlist:
+	if letter == guess:
+		GuessList[index] = guess
+	index += 1
+print(GuessList)
 while misses < 7:
-	guess = input("Guess a letter: ")
-	if guess in secretWord:
+	if guess in wordlist:
 		#looop through secret word and change my guesss list at the correct lndexs
 		print("letter is in the word")
-	else:
-		misses += 1
-		print(hangmanList[misses])
+else:
+  misses += 1
+  print("letter is NOT in the word")
+  print(hangmanList[misses])
+  print(GuessList)
 print("GAME OVER")
-
-def main(t):
-	alphabet = ["a","b","c", "d", "e", "f", "g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-    
-wordlist= "ponyo"
-wordlist = list(secretWord)
-  
-#missNum = input("How many misses would it take to lose??: ")
-
-
-choice = input("Type a letter: ")
-
-myString = (wordlist[0])
-myList = list(myString)
-print(myList)
-
-GuessList = []
-for a in myList:
+for p in wordlist:
 	GuessList.append("_")
-
-print(GuessList)
-
-GuessList[2] = [choice]
-print(GuessList)
-
-
-if choice == myString:
-	print("Its a match")
-	
-else:
-	print("Not a match")
-# how to check if a letter is in a word
-letter = input("Type a lette: ")
-if letter in myString:
-	print("Letter is in the word!")
 	print(GuessList)
-
-else:
-	print("letter is NOT in the word")
-	print(GuessList)
-
-count = 0
-for l in myString:
-	if l == letter:
-		print(count)
-	count += 1
+print("GAME OVER")
