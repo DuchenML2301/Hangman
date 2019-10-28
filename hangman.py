@@ -9,21 +9,6 @@ GuessList = list("_____")
 wordlist = list(wordlist)
 GuessList = []
 print(GuessList)
-GuessList[0] = "p"
-print(GuessList)
-GuessList[1] = "o"
-print(GuessList)
-GuessList[2] = "n"
-print(GuessList)
-GuessList[3] = "y"
-print(GuessList)
-GuessList[4] = "o"
-print(GuessList)
-for l in guess:
-  if l == letter:
-    print(count)
-    count += 1
-print(GuessList)
   
 hangmanList = [''' 
  
@@ -63,18 +48,28 @@ hangmanList = ['''
      /|\  |
      / \  |
          === ''' ]
+if time < 3:
+  print(GuessList)
 misses = 0
 guess = input("Guess a letter: ")
+lol = input("How many misses do you want for this game?")
+letter = "p", "o", "n", "y", "o"
 guess = (wordlist[0])
 wordlist = list(guess)
 index = 0
+for l in guess:
+  if l == letter:
+    print(count)
+    count += 1
+print(GuessList)
 for letter in wordlist:
 	if letter == guess:
 		GuessList[index] = guess
 	index += 1
 print(GuessList)
-while misses < 7:
-	if guess in wordlist:
+while misses < "lol":
+  print("YOU WON THE GAME!")
+  if guess in wordlist:
 		#looop through secret word and change my guesss list at the correct lndexs
 		print("letter is in the word")
 else:
